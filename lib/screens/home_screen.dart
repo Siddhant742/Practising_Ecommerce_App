@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import '../widgets/SlidingBoxWidget.dart';
+import 'package:practice_ecommerce/widgets/SlidingBoxWidget.dart';
+
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -16,15 +17,17 @@ class HomeScreen extends StatelessWidget {
       ),
       body: SafeArea(child: ListView(
         children: [
+
           SlidingBox(size: size),
           GridView.builder(
+            itemCount: 5,
             shrinkWrap: true,
               physics: const NeverScrollableScrollPhysics(),
               gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(crossAxisCount: 2), itemBuilder: (context, index){
             return Container(
-
+              margin: EdgeInsets.all(5),
               decoration: const BoxDecoration(
-                color: Colors.deepOrange,
+                color: Color(0xff234567),
               ),
             );
           })
