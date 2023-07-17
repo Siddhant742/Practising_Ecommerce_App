@@ -1,10 +1,10 @@
-import 'dart:ui';
+import 'package:flutter/widgets.dart';
 
 class Product {
   String title;
-  double price;
+  var price;
   String? description;
-  Image? image;
+  ImageProvider? image;
   String? category;
 
   Product({
@@ -12,27 +12,26 @@ class Product {
     required this.price,
     this.description,
     this.image,
-    this.category
+    this.category,
   });
 
-  factory Product.FromJson(Map<String, dynamic> map){
+  factory Product.fromJson(Map<String, dynamic> map) {
     return Product(
-        title: map['title'],
-        price: map['price'],
-        description: map['description'],
-        image: map['image'],
-        category: map['category']);
+      title: map['title'],
+      price: map['price'],
+      description: map['description'],
+      image: map['image'] != null ? NetworkImage(map['image']) : null,
+      category: map['category'],
+    );
   }
 
-
-  Map<String, dynamic> toJson(){
-    return{
-      'title' : title,
-      'price' : price,
-      'description' : description,
-      'image' : image,
-      'category' : category
+  Map<String, dynamic> toJson() {
+    return {
+      'title': title,
+      'price': price,
+      'description': description,
+      'image': image != null ? image.toString() : null,
+      'category': category,
     };
-
   }
 }
