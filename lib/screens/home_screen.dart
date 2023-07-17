@@ -28,7 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Color(0xFFA4EBEE),
+        backgroundColor: Color(0xFFC75E83),
         centerTitle: true,
         title: Text('Home'),
       ),
@@ -36,37 +36,48 @@ class _HomeScreenState extends State<HomeScreen> {
           child: ListView(
         children: [
           SlidingBox(size: size),
-          Consumer(
+          Consumer<ProductProvider>(
             builder: (BuildContext context, provider, Widget? child) {
               return GridView.builder(
                   itemCount: context.watch<ProductProvider>().products.length,
                   shrinkWrap: true,
                   physics: const NeverScrollableScrollPhysics(),
                   gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                      crossAxisCount: 1),
+                      crossAxisCount: 2,
+                    crossAxisSpacing: 4,
+                    mainAxisSpacing: 0,
+                    mainAxisExtent: 206,),
                   itemBuilder: (context, index) {
-                    return Expanded(
-                      child: Container(
-
-                        margin: EdgeInsets.all(5),
-                        decoration: BoxDecoration(
-                            color: Color(0x38A4EBEE),
-                            borderRadius: BorderRadius.circular(12)),
-                        child: Column(
-                          // crossAxisAlignment: CrossAxisAlignment.stretch,
-                          children: [
-                            // Text(context
-                            //     .watch<ProductProvider>()
-                            //     .products[index]
-                            //     .title),
-
-                            Image(image: context
+                    return Container(
+                      padding: EdgeInsets.all(10),
+                      margin: EdgeInsets.symmetric(vertical: 8, horizontal: 5),
+                      decoration: BoxDecoration(
+                          // color: Color(0x38A4EBEE),
+                        border: Border.all(
+                          color: Color(0xFFC75E83),
+                          width: 0.4
+                        ),
+                          borderRadius: BorderRadius.circular(12)),
+                      child: Column(
+                        // crossAxisAlignment: CrossAxisAlignment.stretch,
+                        
+                        children: [
+                          Text(context
+                              .watch<ProductProvider>()
+                              .products[index]
+                              .title,
+                          style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            overflow: TextOverflow.ellipsis
+                          ),),
+                          SizedBox(height: 15,),
+                          Expanded(
+                            child: Image(image: context
                                 .watch<ProductProvider>()
                                 .products[index]
-                                .image!,
-                            fit: BoxFit.scaleDown,)
-                          ],
-                        ),
+                                .image!,),
+                          )
+                        ],
                       ),
                     );
                   });
