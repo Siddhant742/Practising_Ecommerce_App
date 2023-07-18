@@ -1,13 +1,11 @@
-import 'package:fancy_shimmer_image/fancy_shimmer_image.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_iconly/flutter_iconly.dart';
 import 'package:practice_ecommerce/controller/Product_Provider.dart';
 import 'package:practice_ecommerce/models/Product_Model.dart';
 import 'package:practice_ecommerce/screens/ProductDetails.dart';
 import 'package:practice_ecommerce/screens/SearchProduct.dart';
-import 'package:practice_ecommerce/widgets/SlidingBoxWidget.dart';
 import 'package:provider/provider.dart';
+import '../models/widgets/SlidingBoxWidget.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,9 +18,8 @@ class _HomeScreenState extends State<HomeScreen> {
   ProductProvider productProvider = ProductProvider();
   @override
   void initState() {
-    // TODO: implement initState
     productProvider = Provider.of<ProductProvider>(context, listen: false);
-    var products =productProvider.fetchProduct();
+    productProvider.fetchProduct();
     super.initState();
   }
 
@@ -80,20 +77,20 @@ class _HomeScreenState extends State<HomeScreen> {
                                 .watch<ProductProvider>()
                                 .products[index]
                                 .title,
-                            style: TextStyle(
+                            style: const TextStyle(
                               fontWeight: FontWeight.bold,
                               fontSize: 18,
                               overflow: TextOverflow.ellipsis
                             ),),
-                            SizedBox(height: 15,),
+                            const SizedBox(height: 15,),
                             Expanded(
                               child: Image(image: product.image!,),
                             ),
-                            SizedBox(height: 5,),
+                            const SizedBox(height: 5,),
                             Row(
                               mainAxisAlignment: MainAxisAlignment.end,
-                              children: [Text('\$' + product.price.toString(),
-                              style: TextStyle(
+                              children: [Text('\$${product.price}',
+                              style: const TextStyle(
                                 fontWeight: FontWeight.w500
                               ),)],
                             )

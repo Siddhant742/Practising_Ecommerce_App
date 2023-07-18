@@ -16,5 +16,9 @@ fetchProduct() async {
   notifyListeners();
 
 }
+List<Product> searchProduct(String searchQuery){
+  List<Product> filteredProducts = products.where((element) => element.title.toUpperCase().contains(searchQuery.toUpperCase())).toList();
+  return filteredProducts;
+}
 
 }
