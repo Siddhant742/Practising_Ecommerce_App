@@ -52,7 +52,7 @@ class _SearchProductState extends State<SearchProduct> {
                     // color: Color(0x38A4EBEE),
                       border: Border.all(
                           color: Color(0xFFC75E83),
-                          width: 0.4
+                          width: 1
                       ),
                       borderRadius: BorderRadius.circular(12)),
                   child: Column(
