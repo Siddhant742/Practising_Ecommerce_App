@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:practice_ecommerce/controller/Product_Provider.dart';
+import 'package:practice_ecommerce/screens/SignIn_Screen.dart';
 import 'package:practice_ecommerce/screens/home_screen.dart';
 import 'package:provider/provider.dart';
 
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         theme: ThemeData(
             ),
-        home: HomeScreen(),
+        home: SignInScreen(),
       ),
     );
   }
