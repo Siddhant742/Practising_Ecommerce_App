@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "882649312491",
+    "project_id": "learning-ecommerce-app",
+    "storage_bucket": "learning-ecommerce-app.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:882649312491:android:6104727660d9c1195be2ae",
+        "android_client_info": {
+          "package_name": "com.example.practice_ecommerce"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "882649312491-9p9vjbcqlovsrpcfc36gntb4o9sfdp3i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSu9Cyf02C2V8sFJWsEFmIrzq89ir8oSw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "882649312491-9p9vjbcqlovsrpcfc36gntb4o9sfdp3i.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "882649312491-cumnca1cjv6gtd1qglg95rqr7e7riass.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.practiceEcommerce.RunnerTests"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
