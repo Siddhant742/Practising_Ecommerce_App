@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:practice_ecommerce/controller/AuthService.dart';
 import 'package:practice_ecommerce/models/widgets/MyButton.dart';
 import 'package:practice_ecommerce/models/widgets/SquareTile.dart';
 
@@ -57,7 +58,7 @@ class SignInScreen extends StatelessWidget {
             ],
             ),
             SizedBox(height: 40,),
-            SquareTile(ImagePath: 'assets/images/google.png', OnTap: (){},),
+            SquareTile(ImagePath: 'assets/images/google.png', OnTap: () => AuthService().SignInWithGoogle(),),
 
           ],
         ),

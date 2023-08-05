@@ -9,7 +9,7 @@ class SquareTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
-      onTap: (){OnTap;},
+      onTap: OnTap(),
       child: Container(
         padding: EdgeInsets.all(20),
         decoration: BoxDecoration(

@@ -22,6 +22,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
             ),
         home: SignInScreen(),
+        //check wether is signed in or Not and then show them HomePage or Login Page accordingly.
       ),
     );
   }
